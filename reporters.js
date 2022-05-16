@@ -19,6 +19,40 @@ class Reporters {
                         }
                     }
                 }, {
+                    opcode: 'OF',
+                    blockType: Scratch.BlockType.REPORTER,
+                    text: 'item [INDEX] of [OBJ]',
+                    arguments: {
+                        INDEX: {
+                            type: Scratch.ArgumentType.STRING,
+                            defaultValue: '0'
+                        },
+                        OBJ: {
+                            type: Scratch.ArgumentType.STRING,
+                            defaultValue: 'Object'
+                        }
+                    }
+                }, {
+                    opcode: 'stringify',
+                    blockType: Scratch.BlockType.REPORTER,
+                    text: 'stringify [OBJ]',
+                    arguments: {
+                        OBJ: {
+                            type: Scratch.ArgumentType.STRING,
+                            defaultValue: 'Object'
+                        }
+                    }
+                }, {
+                    opcode: 'parseJSON',
+                    blockType: Scratch.BlockType.REPORTER,
+                    text: 'parseJSON [STR]',
+                    arguments: {
+                        STR: {
+                            type: Scratch.ArgumentType.STRING,
+                            defaultValue: '{}'
+                        }
+                    }
+                }, {
                     opcode: 'True',
                     blockType: Scratch.BlockType.BOOLEAN,
                     text: 'true'
@@ -41,12 +75,16 @@ class Reporters {
                 }, {
                     opcode: 'array',
                     blockType: Scratch.BlockType.REPORTER,
-                    text: '[]'
+                    text: '0~F'
+                }, {
+                    opcode: 'getLocationString',
+                    blockType: Scratch.BlockType.REPORTER,
+                    text: 'locationString'
                 }, {
                     opcode: 'getLocation',
                     blockType: Scratch.BlockType.REPORTER,
                     text: 'location'
-                },{
+                }, {
                     opcode: 'referrer',
                     blockType: Scratch.BlockType.REPORTER,
                     text: 'referrer'
@@ -78,16 +116,28 @@ class Reporters {
         return {};
     }
     array() {
-        return [];
+        return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
     }
     strictlyEquals(args) {
         // Note strict equality: Inputs must match exactly: in type, case, etc.
         return args.ONE === args.TWO;
     }
-    getLocation() {
+    OF(args) {
+        return args.OBJ[args.INDEX];
+    }
+    stringify(args) {
+        return JSON.stringify(args.OBJ);
+    }
+    parseJSON(args){
+        return JSON.parse(args.STR);
+    }
+    getLocationString() {
         return location.toString();
     }
-    referrer(){
+    getLocation() {
+        return JSON.parse(JSON.stringify(location));
+    }
+    referrer() {
         return document.referrer;
     }
     userAgent() {

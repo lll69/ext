@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf8">
-    <meta name="robots" content="noindex">
+    <!--<meta name="robots" content="noindex">-->
     <title>TurboWarp Extensions</title>
     <style>
       body {
@@ -110,7 +110,7 @@
 
   <body>
     <section class="header">
-      <h1>Do not use these extensions.</h1>
+      <h1>Experimental extensions</h1>
       <p>Everything on this website is highly experimental and has <b>NO GUARANTEE OF WORKING IN THE FUTURE</b>. Please do not use these extensions if you are not an extension developer.</p>
       <p>They have severe technical limitations that make them basically unusable for anything remotely serious.</p>
     </section>
@@ -121,7 +121,7 @@
       </summary>
       <section class="extension">
         <h2>Fetch</h2>
-        <p>Make requests to the broader internet.</p>
+        <p>Make requests to the internet.</p>
         <div class="blocks">
           <div class="block">
             <div class="block-text">GET</div>
@@ -171,7 +171,7 @@
       </section>
       <section class="extension">
         <h2>Strict Equality</h2>
-        <p>Note strict equality: Inputs must match exactly: in type, case, etc.</p>
+        <p>Inputs must match exactly: in type, case, etc.</p>
         <div class="blocks">
           <div class="block">
             <div class="block-input">First value</div>
@@ -187,7 +187,7 @@
       <section class="extension">
         <h2>Reporters</h2>
         <p>Some reporters</p>
-        <div class="blocks">
+        <!--<div class="blocks">
           <div class="block">
             <div class="block-text">true</div>
           </div>
@@ -200,7 +200,7 @@
           <div class="block">
             <div class="block-text">Infinity</div>
           </div>
-        </div>
+        </div>-->
         <div class="url">
           <div class="url-value">https://lll69.github.io/ext/reporters.js</div>
           <a class="url-open">Open Extension</a>
@@ -225,11 +225,12 @@
       }
       for (const link of document.querySelectorAll('.url-open')) {
         const url = link.parentNode.querySelector('.url-value').textContent.trim();
-        link.href = `https://lll69.github.io/turbo-warp-scratch-gui/editor.html?extension=${url}`;
+        link.href = `e?extension=${url}`;
         link.target = '_blank';
         link.rel = '';
       }
     })();
     </script>
+    <script src="/tools/track.js"></script>
   </body>
 </html>
