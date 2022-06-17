@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf8">
-    <!--<meta name="robots" content="noindex">-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>TurboWarp Extensions</title>
     <style>
       body {
@@ -73,6 +73,7 @@
       .url-open {
         padding: 0 4px;
         border-radius: 0 32px 32px 0;
+        white-space: nowrap;
       }
 
       .blocks {
@@ -81,8 +82,19 @@
       .block {
         background-color: #0FBD8C;
         border-radius: 14px;
-        padding: 3px 0 3px 3px;
+        padding: 3px 0 3px 0;
         margin: 0 3px 3px 0;
+        display: inline-flex;
+        align-items: center;
+        font-size: 9pt;
+        box-sizing: border-box;
+        white-space: nowrap;
+        height: 27px;
+      }
+      .square-block {
+        background-color: #0FBD8C;
+        padding: 3px 0 3px 0;
+        margin: 0 13px 3px 13px;
         display: inline-flex;
         align-items: center;
         font-size: 9pt;
@@ -93,6 +105,7 @@
       .block-text {
         color: white;
         margin-right: 3px;
+        margin-left: 3px;
       }
       .block-input {
         height: 100%;
@@ -101,9 +114,26 @@
         color: black;
         border-radius: 14px;
         margin-right: 3px;
+        margin-left: 3px;
         padding: 3px;
         text-align: center;
         min-width: 23px;
+      }
+      .left {
+        background: linear-gradient(45deg,#0FBD8C,#0FBD8C 50%,transparent 50%, transparent);
+        transform: rotate(45deg);
+        width: 20px;
+        height: 20px;
+        margin-left: -10px;
+        margin-right: -10px;
+      }
+      .right {
+        background: linear-gradient(-45deg,#0FBD8C,#0FBD8C 50%,transparent 50%, transparent);
+        transform: rotate(-45deg);
+        width: 20px;
+        height: 20px;
+        margin-left: -10px;
+        margin-right: -10px;
       }
     </style>
   </head>
@@ -173,10 +203,12 @@
         <h2>Strict Equality</h2>
         <p>Inputs must match exactly: in type, case, etc.</p>
         <div class="blocks">
-          <div class="block">
+          <div class="square-block">
+            <div class="left"></div>
             <div class="block-input">First value</div>
             <div class="block-text">strictly equals</div>
             <div class="block-input">Second value</div>
+            <div class="right"></div>
           </div>
         </div>
         <div class="url">
@@ -185,22 +217,26 @@
         </div>
       </section>
       <section class="extension">
+        <h2>Gamepad</h2>
+        <p>Gamepad testing do not use under any condition this will stop working</p>
+        <div class="blocks">
+          <div class="square-block">
+            <div class="left"></div>
+            <div class="block-text">button</div>
+            <div class="block-input">1</div>
+            <div class="block-text">of pad</div>
+            <div class="block-input">1</div>
+            <div class="block-text">is down?</div>
+            <div class="right"></div>
+          </div>
+        </div>
+        <div class="url">
+          <div class="url-value">https://lll69.github.io/ext/gamepad-testing-do-not-use-under-any-condition-this-will-stop-working.js</div>
+          <a class="url-open">Open Extension</a>
+        </div>
+      </section>
+      <section class="extension">
         <h2>Reporters</h2>
-        <p>Some reporters</p>
-        <!--<div class="blocks">
-          <div class="block">
-            <div class="block-text">true</div>
-          </div>
-          <div class="block">
-            <div class="block-text">false</div>
-          </div>
-          <div class="block">
-            <div class="block-text">NaN</div>
-          </div>
-          <div class="block">
-            <div class="block-text">Infinity</div>
-          </div>
-        </div>-->
         <div class="url">
           <div class="url-value">https://lll69.github.io/ext/reporters.js</div>
           <a class="url-open">Open Extension</a>
