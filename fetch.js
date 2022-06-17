@@ -11,7 +11,7 @@ class Fetch {
           arguments: {
             URL: {
               type: Scratch.ArgumentType.STRING,
-              defaultValue: 'https://extensions.turbowarp.org/hello.txt'
+              defaultValue: 'https://lll69.github.io/ext/hello.txt'
             }
           }
         }
